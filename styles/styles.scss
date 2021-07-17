@@ -1,5 +1,19 @@
+@use "/styles/bootswatch";
+
+body * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 h1 {
     span {
         font-size: 4rem;
     }
+}
+
+.col {
+    background-color: red;
+    margin: 1rem;
+    padding: 4rem;
 }

@@ -5,12 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>The Best RGB Guessing Game</title>
-        <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-            crossorigin="anonymous"
-        />
+        <link rel="stylesheet" href="/styles/bootstrap.min.css" />
         <link rel="stylesheet" href="/styles/styles.css" />
     </head>
     <body>
@@ -21,22 +16,26 @@
             </h1>
         </div>
 
-        <div>
-            <p>New Colors</p>
-            <div>
-                <p>Easy</p>
-                <p>Hard</p>
+        <div class="bg-light d-flex justify-content-evenly py-2">
+            <button class="btn btn-primary">New Colors</button>
+            <p class="btn bg-danger pe-none">Try Again!</p>
+            <div class="d-flex">
+                <button class="btn btn-outline-primary me-1">Easy</button>
+                <button class="btn btn-primary disabled">Hard</button>
             </div>
         </div>
+        <div></div>
 
-        <div>
-            <div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
-                <div class="square"></div>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col rounded"></div>
+                <div class="col rounded"></div>
+                <div class="col rounded"></div>
+            </div>
+            <div class="row">
+                <div class="col rounded"></div>
+                <div class="col rounded"></div>
+                <div class="col rounded"></div>
             </div>
         </div>
     </body>
