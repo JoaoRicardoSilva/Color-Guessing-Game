@@ -14,22 +14,23 @@ h1 span {
   display: grid;
   -ms-grid-columns: 1fr 11rem 11rem 11rem 1fr;
       grid-template-columns: 1fr 11rem 11rem 11rem 1fr;
+  gap: 2rem;
   justify-items: center;
+}
+
+#nav #new-colors {
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+}
+
+#nav #again {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
 }
 
 #nav div {
   -ms-grid-column: 4;
       grid-column-start: 4;
-}
-
-#new-colors {
-  -ms-grid-column: 2;
-      grid-column-start: 2;
-}
-
-#again {
-  -ms-grid-column: 3;
-      grid-column-start: 3;
 }
 
 #cont {

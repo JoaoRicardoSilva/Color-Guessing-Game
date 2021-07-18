@@ -13,18 +13,20 @@ h1 {
 #nav {
     display: grid;
     grid-template-columns: 1fr 11rem 11rem 11rem 1fr;
+    gap: 2rem;
     justify-items: center;
+
+    #new-colors {
+        grid-column-start: 2;
+    }
+
+    #again {
+        grid-column-start: 3;
+    }
+
     div {
         grid-column-start: 4;
     }
-}
-
-#new-colors {
-    grid-column-start: 2;
-}
-
-#again {
-    grid-column-start: 3;
 }
 
 #cont {

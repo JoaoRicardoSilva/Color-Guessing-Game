@@ -87,14 +87,23 @@ hardMode();
 
 //jQuery
 $("#new-colors").click(() => {
+    $("#header").addClass("bg-primary");
+
+    $("#again").fadeOut("slow", () => {
+        $("#again").empty();
+        $("#again").text("Try Again!");
+        $("#again").removeClass("btn-success");
+        $("#again").addClass("bg-danger");
+    });
+
     switch (mode) {
         case "easy":
-            $("#header").addClass("bg-primary");
+            $(`#hard-btn`).removeClass("pe-none");
             easyMode();
             break;
 
         case "hard":
-            $("#header").addClass("bg-primary");
+            $(`#easy-btn`).removeClass("pe-none");
             hardMode();
             break;
         default:
@@ -136,9 +145,11 @@ $("body").on("click", ".square", () => {
         switch (mode) {
             case "easy":
                 winEvent(3);
+                $("#hard-btn").addClass("pe-none");
                 break;
             case "hard":
                 winEvent(6);
+                $("#easy-btn").addClass("pe-none");
                 break;
             default:
                 break;
