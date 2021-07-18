@@ -9,22 +9,25 @@
         <link rel="stylesheet" href="/styles/styles.css" />
     </head>
     <body>
-        <div class="d-flex justify-content-center bg-primary">
+        <div id="header" class="d-flex justify-content-center bg-primary">
             <h1 class="text-center">
                 The Best<br />
                 <span id="color-numbers"></span> <br />Guessing Game
             </h1>
         </div>
 
-        <div id="nav" class="bg-light d-flex justify-content-evenly py-2">
+        <div id="nav" class="bg-light py-2">
             <button id="new-colors" class="btn btn-primary">New Colors</button>
-            <p class="btn bg-danger pe-none">Try Again!</p>
-            <div class="d-flex">
-                <button class="btn btn-outline-primary me-1">Easy</button>
-                <button class="btn btn-primary disabled">Hard</button>
+            <p id="again" class="btn bg-danger pe-none">Try Again!</p>
+            <div>
+                <button id="easy-btn" class="btn me-1">Easy</button>
+                <button id="hard-btn" class="btn">Hard</button>
             </div>
         </div>
-        <div id="cont"></div>
+
+        <div id="cont">
+            <div class="test"></div>
+        </div>
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="/script/script.js"></script>

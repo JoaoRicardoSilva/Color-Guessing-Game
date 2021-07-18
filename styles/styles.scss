@@ -10,15 +10,36 @@ h1 {
     }
 }
 
+#nav {
+    display: grid;
+    grid-template-columns: 1fr 11rem 11rem 11rem 1fr;
+    justify-items: center;
+    div {
+        grid-column-start: 4;
+    }
+}
+
+#new-colors {
+    grid-column-start: 2;
+}
+
+#again {
+    grid-column-start: 3;
+}
+
 #cont {
+    display: grid;
+    grid-template-columns: 1fr 11rem 11rem 11rem 1fr;
+    grid-template-rows: 11rem 11rem;
+    gap: 2rem;
+    margin-top: 2rem;
+    grid-template-areas:
+        ". s1 s2 s3 ."
+        ". s4 s5 s6 .";
 }
 
-.row {
-    margin: 2rem 1rem;
-}
-
-.square {
-    width: 11rem;
-    height: 11rem;
-    margin: 0 1rem;
+@for $num from 1 through 7 {
+    #s#{$num} {
+        grid-area: s#{$num};
+    }
 }
