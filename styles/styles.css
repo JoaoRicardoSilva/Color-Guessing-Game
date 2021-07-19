@@ -12,8 +12,8 @@ h1 span {
 #nav {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 11rem 11rem 11rem 1fr;
-      grid-template-columns: 1fr 11rem 11rem 11rem 1fr;
+  -ms-grid-columns: auto 1fr 1fr 1fr auto;
+      grid-template-columns: auto 1fr 1fr 1fr auto;
   gap: 2rem;
   justify-items: center;
 }
@@ -36,8 +36,8 @@ h1 span {
 #cont {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 11rem 11rem 11rem 1fr;
-      grid-template-columns: 1fr 11rem 11rem 11rem 1fr;
+  -ms-grid-columns: auto 1fr 1fr 1fr auto;
+      grid-template-columns: auto 1fr 1fr 1fr auto;
   -ms-grid-rows: 11rem 11rem;
       grid-template-rows: 11rem 11rem;
   gap: 2rem;
