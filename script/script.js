@@ -18,6 +18,12 @@ const secondRow = `
 <div id="s6" class="square rounded"></div>
 `;
 
+const cont = $("#cont");
+const easyBtn = $("#easy-btn");
+const hardBtn = $("#hard-btn");
+const again = $("#again");
+const header = $("#header");
+
 const randomNumber = (n) => {
     return Math.floor(Math.random() * n);
 };
@@ -53,14 +59,14 @@ const hardMode = () => {
 
     showColorNum();
 
-    $("#cont").empty();
-    $("#cont").prepend(firstRow);
-    $("#cont").append(secondRow);
+    cont.empty();
+    cont.prepend(firstRow);
+    cont.append(secondRow);
 
-    $("#easy-btn").removeClass("btn-primary disabled");
-    $("#hard-btn").removeClass("btn-outline-primary");
-    $("#easy-btn").addClass("btn-outline-primary");
-    $("#hard-btn").addClass("btn-primary disabled");
+    easyBtn.removeClass("btn-primary disabled");
+    hardBtn.removeClass("btn-outline-primary");
+    easyBtn.addClass("btn-outline-primary");
+    hardBtn.addClass("btn-primary disabled");
 
     easyAndHard(6);
 };
@@ -70,40 +76,36 @@ const easyMode = () => {
 
     showColorNum();
 
-    $("#cont").empty();
-    $("#cont").prepend(firstRow);
+    cont.empty();
+    cont.prepend(firstRow);
 
-    $("#easy-btn").removeClass("btn-outline-primary");
-    $("#hard-btn").removeClass("btn-primary disabled");
-    $("#easy-btn").addClass("btn-primary disabled");
-    $("#hard-btn").addClass("btn-outline-primary");
+    easyBtn.removeClass("btn-outline-primary");
+    hardBtn.removeClass("btn-primary disabled");
+    easyBtn.addClass("btn-primary disabled");
+    hardBtn.addClass("btn-outline-primary");
 
     easyAndHard(3);
 };
 
-//Code that run at the beginning
-$("#again").fadeOut(0);
-hardMode();
-
-//jQuery
+//Events
 $("#new-colors").click(() => {
-    $("#header").addClass("bg-primary");
+    header.addClass("bg-primary");
 
-    $("#again").fadeOut("slow", () => {
-        $("#again").empty();
-        $("#again").text("Try Again!");
-        $("#again").removeClass("btn-success");
-        $("#again").addClass("bg-danger");
+    again.fadeOut("slow", () => {
+        again.empty();
+        again.text("Try Again!");
+        again.removeClass("btn-success");
+        again.addClass("bg-danger");
     });
 
     switch (mode) {
         case "easy":
-            $(`#hard-btn`).removeClass("pe-none");
+            hardBtn.removeClass("pe-none");
             easyMode();
             break;
 
         case "hard":
-            $(`#easy-btn`).removeClass("pe-none");
+            easyBtn.removeClass("pe-none");
             hardMode();
             break;
         default:
@@ -111,12 +113,12 @@ $("#new-colors").click(() => {
     }
 });
 
-$("#easy-btn").click(() => {
-    $("#header").addClass("bg-primary");
+easyBtn.click(() => {
+    header.addClass("bg-primary");
     easyMode();
 });
-$("#hard-btn").click(() => {
-    $("#header").addClass("bg-primary");
+hardBtn.click(() => {
+    header.addClass("bg-primary");
     hardMode();
 });
 
@@ -133,30 +135,35 @@ $("body").on("click", ".square", () => {
                 $(`#s${s}`).fadeIn("slow");
             }
 
-            $("#again").removeClass("bg-danger");
-            $("#again").addClass("btn-success");
-            $("#again").empty();
-            $("#again").text("Correct!");
-            $("#again").fadeIn("slow");
+            again.removeClass("bg-danger");
+            again.addClass("btn-success");
+            again.empty();
+            again.text("Correct!");
+            again.fadeIn("slow");
 
-            $("#header").removeClass("bg-primary");
-            $("#header").css("background-color", `rgb(${r}, ${g}, ${b})`);
+            header.removeClass("bg-primary");
+            header.css("background-color", `rgb(${r}, ${g}, ${b})`);
         };
+
         switch (mode) {
             case "easy":
                 winEvent(3);
-                $("#hard-btn").addClass("pe-none");
+                hardBtn.addClass("pe-none");
                 break;
             case "hard":
                 winEvent(6);
-                $("#easy-btn").addClass("pe-none");
+                easyBtn.addClass("pe-none");
                 break;
             default:
                 break;
         }
     } else {
-        $("#again").fadeIn(0);
-        $("#again").fadeOut("slow");
+        again.fadeIn(0);
+        again.fadeOut("slow");
         $(`#${id}`).fadeOut("slow");
     }
 });
+
+//Code that run at the beginning
+again.fadeOut(0);
+hardMode();
