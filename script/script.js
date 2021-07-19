@@ -91,6 +91,8 @@ const easyMode = () => {
 $("#new-colors").click(() => {
     header.addClass("bg-primary");
 
+    $(".square").removeClass("pe-none");
+
     again.fadeOut("slow", () => {
         again.empty();
         again.text("Try Again!");
@@ -143,6 +145,8 @@ $("body").on("click", ".square", () => {
 
             header.removeClass("bg-primary");
             header.css("background-color", `rgb(${r}, ${g}, ${b})`);
+
+            $(".square").addClass("pe-none");
         };
 
         switch (mode) {
