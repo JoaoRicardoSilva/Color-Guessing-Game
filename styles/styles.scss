@@ -1,47 +1,51 @@
 body * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 h1 {
-    span {
-        font-size: 4rem;
-    }
+  span {
+    font-size: 4rem;
+  }
 }
 
 #nav {
-    display: grid;
-    grid-template-columns: auto 1fr 1fr 1fr auto;
-    gap: 2rem;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr auto;
+  gap: 2rem;
+  justify-items: center;
 
-    #new-colors {
-        grid-column-start: 2;
-    }
+  #new-colors {
+    grid-column-start: 2;
+  }
 
-    #again {
-        grid-column-start: 3;
-    }
+  #again {
+    grid-column-start: 3;
+  }
 
-    div {
-        grid-column-start: 4;
-    }
+  div {
+    grid-column-start: 4;
+  }
 }
 
 #cont {
-    display: grid;
-    grid-template-columns: auto 1fr 1fr 1fr auto;
-    grid-template-rows: 11rem 11rem;
-    gap: 2rem;
-    margin-top: 2rem;
-    grid-template-areas:
-        ". s1 s2 s3 ."
-        ". s4 s5 s6 .";
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr auto;
+  grid-template-rows: 11rem 11rem;
+  gap: 2rem;
+  margin-top: 2rem;
+  grid-template-areas:
+    ". s1 s2 s3 ."
+    ". s4 s5 s6 .";
+
+  .square {
+    cursor: pointer;
+  }
 }
 
 @for $num from 1 through 7 {
-    #s#{$num} {
-        grid-area: s#{$num};
-    }
+  #s#{$num} {
+    grid-area: s#{$num};
+  }
 }
